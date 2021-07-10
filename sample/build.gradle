@@ -1,18 +1,14 @@
 apply plugin: 'com.android.application'
 
-dependencies {
-    compile project(':library')
-}
-
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
         versionCode 6
         versionName '1.5'
         minSdkVersion 14
-        targetSdkVersion 22
+        targetSdkVersion 30
     }
 
     signingConfigs {
@@ -40,4 +36,8 @@ android {
     lintOptions {
         abortOnError true
     }
+}
+
+dependencies {
+    implementation project(':library')
 }

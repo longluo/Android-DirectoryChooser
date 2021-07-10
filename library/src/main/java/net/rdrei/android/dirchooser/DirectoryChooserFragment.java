@@ -140,7 +140,7 @@ public class DirectoryChooserFragment extends DialogFragment {
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-            final Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
 
         assert getActivity() != null;
         final View view = inflater.inflate(R.layout.directory_chooser, container, false);
@@ -179,7 +179,7 @@ public class DirectoryChooserFragment extends DialogFragment {
 
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view,
-                    final int position, final long id) {
+                                    final int position, final long id) {
                 debug("Selected index: %d", position);
                 if (mFilesInDir != null && position >= 0
                         && position < mFilesInDir.length) {
@@ -320,8 +320,7 @@ public class DirectoryChooserFragment extends DialogFragment {
      * new folder. User can modify provided name, if it was not disallowed.
      */
     private void openNewFolderDialog() {
-        @SuppressLint("InflateParams")
-        final View dialogView = getActivity().getLayoutInflater().inflate(
+        @SuppressLint("InflateParams") final View dialogView = getActivity().getLayoutInflater().inflate(
                 R.layout.dialog_new_folder, null);
         final TextView msgView = (TextView) dialogView.findViewById(R.id.msgText);
         final EditText editText = (EditText) dialogView.findViewById(R.id.editText);
